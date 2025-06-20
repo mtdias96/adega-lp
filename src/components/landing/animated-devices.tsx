@@ -5,9 +5,9 @@ import { Award, BarChart3, DollarSign, Package, Store, Target, TrendingUp, Users
 
 export default function AnimatedDevices() {
   return (
-    <div className="relative w-full h-[500px] flex items-center justify-center overflow-hidden">
+    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
       <motion.div
-        className="relative z-20 bg-white rounded-2xl shadow-2xl p-6 w-80 h-64"
+        className="relative z-20 bg-white rounded-2xl shadow-2xl p-4 sm:p-6 w-64 sm:w-80 h-48 sm:h-64"
         initial={{ opacity: 0, scale: 0.8, y: 50 }}
         animate={{
           opacity: 1,
@@ -28,24 +28,24 @@ export default function AnimatedDevices() {
         }}
       >
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center">
-              <Store className="w-4 h-4 text-white" />
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary-600 rounded-lg flex items-center justify-center">
+              <Store className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
             </div>
-            <span className="font-semibold text-gray-900">AdegaTech</span>
+            <span className="font-semibold text-gray-900 text-sm sm:text-base">AdegaTech</span>
           </div>
           <div className="flex space-x-1">
-            <div className="w-2 h-2 bg-red-400 rounded-full"></div>
-            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full"></div>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-400 rounded-full"></div>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full"></div>
           </div>
         </div>
 
         {/* Central Icon - Rocket equivalent */}
         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <motion.div
-            className="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-full flex items-center justify-center shadow-lg"
+            className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-full flex items-center justify-center shadow-lg"
             animate={{
               scale: [1, 1.15, 1],
               rotate: [0, 10, -10, 0],
@@ -61,13 +61,13 @@ export default function AnimatedDevices() {
               ease: "easeInOut",
             }}
           >
-            <Zap className="w-10 h-10 text-white" />
+            <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </motion.div>
         </div>
 
         {/* Bottom Stats */}
-        <div className="absolute bottom-4 left-4 right-4">
-          <div className="grid grid-cols-2 gap-3">
+        <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             <motion.div
               className="text-center"
               animate={{
@@ -79,7 +79,7 @@ export default function AnimatedDevices() {
                 ease: "easeInOut",
               }}
             >
-              <div className="text-lg font-bold text-gray-900">R$ 12k</div>
+              <div className="text-sm sm:text-lg font-bold text-gray-900">R$ 12k</div>
               <div className="text-xs text-gray-600">Vendas</div>
             </motion.div>
             <motion.div
@@ -94,7 +94,7 @@ export default function AnimatedDevices() {
                 delay: 1.5,
               }}
             >
-              <div className="text-lg font-bold text-gray-900">247</div>
+              <div className="text-sm sm:text-lg font-bold text-gray-900">247</div>
               <div className="text-xs text-gray-600">Produtos</div>
             </motion.div>
           </div>
@@ -103,7 +103,7 @@ export default function AnimatedDevices() {
 
       {/* Floating Card 1 - Top Left */}
       <motion.div
-        className="absolute top-8 left-8 z-10 bg-white rounded-xl shadow-lg p-4 w-48"
+        className="absolute top-4 sm:top-8 left-4 sm:left-8 z-10 bg-white rounded-xl shadow-lg p-3 sm:p-4 w-36 sm:w-48"
         initial={{ opacity: 0, x: -100, y: -50 }}
         animate={{
           opacity: 1,
@@ -128,9 +128,9 @@ export default function AnimatedDevices() {
           },
         }}
       >
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3">
           <motion.div
-            className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center"
+            className="w-8 h-8 sm:w-10 sm:h-10 bg-accent-100 rounded-lg flex items-center justify-center"
             animate={{
               scale: [1, 1.1, 1],
               rotate: [0, 5, -5, 0],
@@ -141,18 +141,18 @@ export default function AnimatedDevices() {
               ease: "easeInOut",
             }}
           >
-            <TrendingUp className="w-5 h-5 text-accent-600" />
+            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-accent-600" />
           </motion.div>
           <div>
-            <div className="text-sm font-semibold text-gray-900">Crescimento</div>
-            <div className="text-lg font-bold text-accent-600">+24%</div>
+            <div className="text-xs sm:text-sm font-semibold text-gray-900">Crescimento</div>
+            <div className="text-sm sm:text-lg font-bold text-accent-600">+24%</div>
           </div>
         </div>
       </motion.div>
 
       {/* Floating Card 2 - Top Right */}
       <motion.div
-        className="absolute top-12 right-12 z-10 bg-white rounded-xl shadow-lg p-4 w-44"
+        className="absolute top-6 sm:top-12 right-6 sm:right-12 z-10 bg-white rounded-xl shadow-lg p-3 sm:p-4 w-32 sm:w-44"
         initial={{ opacity: 0, x: 100, y: -50 }}
         animate={{
           opacity: 1,
@@ -179,11 +179,11 @@ export default function AnimatedDevices() {
       >
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-sm text-gray-600">Estoque</div>
-            <div className="text-xl font-bold text-gray-900">1.2k</div>
+            <div className="text-xs sm:text-sm text-gray-600">Estoque</div>
+            <div className="text-lg sm:text-xl font-bold text-gray-900">1.2k</div>
           </div>
           <motion.div
-            className="w-8 h-8 bg-secondary-100 rounded-lg flex items-center justify-center"
+            className="w-6 h-6 sm:w-8 sm:h-8 bg-secondary-100 rounded-lg flex items-center justify-center"
             animate={{
               rotate: [0, 360],
               scale: [1, 1.1, 1],
@@ -193,7 +193,7 @@ export default function AnimatedDevices() {
               scale: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
             }}
           >
-            <Package className="w-4 h-4 text-secondary-600" />
+            <Package className="w-3 h-3 sm:w-4 sm:h-4 text-secondary-600" />
           </motion.div>
         </div>
       </motion.div>
