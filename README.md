@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Estrutura do Projeto - AdegaTech Landing Page
 
-## Getting Started
+## 📁 Organização de Pastas
 
-First, run the development server:
+### `/src/components/`
+- **`/ui/`** - Componentes base reutilizáveis (Button, Card, Badge, etc.)
+- **`/shared/`** - Componentes compartilhados entre páginas (Header, Logo, Navigation)
+- **`/landing/`** - Componentes específicos da landing page (Hero, Features, etc.)
+- **`/common/`** - Componentes utilitários (Spinner, Loading, etc.)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### `/src/constants/`
+- **`navigation.ts`** - Itens de navegação
+- **`features.ts`** - Dados dos recursos/features
+- **`config.ts`** - Configurações gerais (opcional)
+
+### `/src/types/`
+- **`index.ts`** - Definições de tipos TypeScript
+
+### `/src/utils/`
+- **`utils.ts`** - Funções utilitárias
+- **`helpers.ts`** - Funções auxiliares (opcional)
+
+### `/src/hooks/`
+- **`useMobileMenu.ts`** - Hook para menu mobile (opcional)
+- **`useScroll.ts`** - Hook para scroll (opcional)
+
+## 🎯 Padrões de Nomenclatura
+
+### Componentes
+- **PascalCase**: `Header.tsx`, `FeatureCard.tsx`
+- **kebab-case**: `animated-devices.tsx` (para componentes complexos)
+
+### Arquivos
+- **camelCase**: `navigation.ts`, `features.ts`
+- **kebab-case**: `global.css`
+
+### Pastas
+- **camelCase**: `components/`, `constants/`
+- **kebab-case**: `landing-page/` (se necessário)
+
+## 📋 Convenções de Import
+
+```typescript
+// Componentes UI
+import { Button } from "@/components/ui/button"
+
+// Componentes compartilhados
+import Header from "@/components/shared/Header"
+
+// Componentes da landing page
+import Hero from "@/components/landing/Hero"
+
+// Constantes
+import { navigationItems } from "@/constants/navigation"
+
+// Tipos
+import type { Feature } from "@/types"
+
+// Utilitários
+import { cn } from "@/utils/utils"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔧 Estrutura de um Componente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```typescript
+// 1. Imports
+import { Button } from "@/components/ui/button"
+import type { ComponentProps } from "@/types"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+// 2. Interface/Types
+interface ComponentProps {
+  // props
+}
 
-## Learn More
+// 3. Componente
+export default function Component({ prop }: ComponentProps) {
+  return (
+    // JSX
+  )
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Responsividade
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Mobile First**: Sempre começar com estilos mobile
+- **Breakpoints**: `sm:`, `md:`, `lg:`, `xl:`
+- **Classes responsivas**: `text-sm sm:text-base lg:text-lg`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Estilização
 
-## Deploy on Vercel
+- **Tailwind CSS**: Classes utilitárias
+- **CSS Modules**: Para estilos complexos (se necessário)
+- **CSS Global**: Apenas para reset e variáveis
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Estrutura de Dados
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Navigation
+```typescript
+export const navigationItems = [
+  { name: "Recursos", href: "#recursos" },
+  { name: "Como Funciona", href: "#como-funciona" },
+] as const;
+```
+
+### Features
+```typescript
+export const features = [
+  {
+    icon: Zap,
+    title: "Vendas Instantâneas",
+    description: "Descrição do recurso",
+  },
+] as const;
+```
+
+## 🚀 Próximos Passos
+
+1. **Adicionar mais seções** na pasta `/landing/`
+2. **Criar hooks customizados** na pasta `/hooks/`
+3. **Expandir tipos** na pasta `/types/`
+4. **Adicionar testes** na pasta `/__tests__/`
+5. **Configurar Storybook** para documentação de componentes
